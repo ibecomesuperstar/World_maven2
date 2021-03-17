@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <!--
+  properties标签中的配置可以供整个配置文件使用，在任何位置都可以引入其中配置的值。
+  properties标签可以通过子标签 property标签来配置一些子元素信息，也可以配置外部的动态文件。-->
+<!--
+    <properties resource="mysql.properties"></properties> 跟    <properties resource="mysql.properties"/> 的区别是什么
+-->
+
+    <properties resource="mysql.properties"/>
+
+    <!--类型别名-->
+    <!--<typeAliasesl>
+    <typeAlias alias="User" type="com . xxxx.entity.User"/></typeAliases>-->
+    <!--对事务的管理和连接池的配置-->
+<!--    <typeAliases>
+
+        <package name=""/>
+    </typeAliases>-->
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"></transactionManager>
+            <dataSource type="POOLED">
+                <!--$ 取值 从       <properties resource="mysql.properties"/>    的     mysql.properties       -->
+               <!--driver  url   username   password  原本这几个都加油datebase.driver  -->
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${user}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+<!--
+        <mapper resource=""></mapper>
+-->
+
+     <!--   <package name="mapper"/> 跟这个   <package name="mapper"></package> 的区别是什么？-->
+<!--
+        <package name="com.mapper"/>
+-->
+      <!--  <mapper class="com.mapper.PersonMapper"/>-->
+
+        <mapper resource="PersonMapper.xml"/>
+    </mappers>
+
+
+</configuration>

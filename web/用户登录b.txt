@@ -1,0 +1,72 @@
+1 数据库 Person
+2 前台
+      登录页面： login.html
+        用户登录js校验
+        登录表单验证
+         1登录按钮绑定事件
+         2获取用户姓名密码
+         3判断姓名是否为空
+           如果为空。提示用户span 标签值 msg ，并且返回return
+         4判断密码是否为空
+           如果为空，提示用户...
+         5 如果登录信息不为空，则提交
+
+      首页 ：index.html
+3 后台
+     登录功能
+      思路
+       1 接收客户端的请求 （接收请求参数 ： 姓名 密码）
+       2 参数的非空判断
+        如果参数为空 通过消息模型对象返回结果（设置状态 ，提示信息 ，回写数据） javabean
+        将消息对象模型设置到request作用域中 请求转发跳转页面 return
+       3 通过用户姓名查询用户对象
+
+       4 判断用户对象是否为空
+        如果为空，通过消息对象模型返回结果（设置状态，设置提示信息。回写数据）
+          将消息对象模型设置到request作用域中 请求转发跳转页面 return
+       5 将数据中查询到的用密码与前台传递的密码做比较
+        如果不相等 通过消息模型对象返回结果（设置状态，设置提示信息。回写数据）
+          将消息对象模型设置到request作用域中 请求转发跳转页面 return
+        如果相等，表示登录成功
+        将用户信息设置到session作用域中
+         重定向，跳转到首页
+controller 接收请求 响应结果
+ 1接收客户端请求 接收参数 姓名 密码
+ 2 调用service 层方法，返回消息对象模型
+ 3 判断消息模型状态码
+   如果状态码失败
+    将消息模型对象设置到request 作用域，请求转发到login。jsp
+   如果状态码成功
+    将消息模型设置到session 作用域 ，重定向跳转到index。jsp
+
+ service 业务逻辑
+  1.参数的非空判断
+    如果参数为空
+    将状态码、提示信息、回显数据设置到消息模型对象中，返回消息模型对象
+  2．调用dao层的查询方法，通过用户名查询用户对象
+  3．判断用户对象是否为空
+    如果为空，将状态码、提示信息、回显数据设置到消息模型对象中，返回消息模型对象
+  4．判断数据库中查询到的用户密码与前台传递过来的密码作比较
+    如果不相等，将状态码、提示信息、回显数据设置到消息模型对象中，返回消息模型对象
+  5，登录成功，成功状态、提示信息、用户对象设置消息模型对象，并return
+
+ mapper 层 （dao层）
+
+  定义对应接口
+
+
+http://localhost:8081/index.html
+http://localhost:8081  都可以访问
+小姐姐的登录模块 https://www.bilibili.com/video/BV1th411k7hN?p=3&spm_id_from=pageDriver
+
+
+crtl + shift + / 注释 html
+//ctrl + o  打开重写方法
+
+
+测试失败PersonMapper_test
+
+好饿 回去吃饭
+又一个不能推送的原因 注意要从push 时  origin -master
+
+https://blog.csdn.net/qqb123456/article/details/25319659?ops_request_misc=&request_id=&biz_id=102&utm_term=fatal:%20The%20current%20branch%20mast&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-0-25319659.first_rank_v2_pc_rank_v29

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!--<%@ page contentType="text/html;charset=UTF-8" language="java" %>-->
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+<div class="container">
+<!--         / 代表绝对路径      /lp/login    /lp/login     -->
+    <form action="/login" method="post" id="loginForm" >
+        <div class="login-box">
+            <div class="apple-btn login-apple">
+                <li class="red-btn"></li>
+                <li class="yellow-btn"></li>
+                <li class="green-btn"></li>
+            </div>
+
+            <div class="title" >Login</div>
+            <div class="input">
+                <input type="text" name="login_user" id="login_user" value="lihua" placeholder="Input your username">
+            </div>
+            <div class="input">
+                <input type="password" name="login_password" id="login_password" value="2" placeholder="Input your password">
+            </div>
+            <span id="msg" style="font-size:0.75rem;color: #FF0000;">${PageModel.msg}</span><br>
+            <div class="btn login-btn" onclick="login_Submit">
+                <!-- id="loginBtn"  绑定 或者onclick="" 事件进行绑定 -->
+                <button type="button" id="loginBtn">
+                    登录
+                </button>
+            </div>
+            <div class="change-box login-change">
+                <div class="change-btn toSign">
+                    <span>去注册</span>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+
+    <div class="sign-box">
+        <div class="apple-btn sign-apple">
+            <li class="red-btn"></li>
+            <li class="yellow-btn"></li>
+            <li class="green-btn"></li>
+        </div>
+        <div class="title">Sign</div>
+        <div class="input">
+            <input type="text" id="sign-user" placeholder="Have A Good Name? Or Email">
+        </div>
+        <div class="input">
+            <input type="password" id="sign-password" placeholder="Keep Secret or Password">
+        </div>
+        <div class="input">
+            <input type="verification" id="sign-verification" placeholder="verification code">
+        </div>
+        <div class="btn sign-btn">
+            <span>注册</span>
+        </div>
+        <div class="change-box sign-change">
+            <div class="change-btn toLogin">
+                <span>去登陆</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="./js/script.js"></script>
+</body>
+<!--- 引入 jquery de js文件,还可以映入在线的jquery 文件 -->
+<script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+<script type="text/javascript" src="./js/jquery-3.4.1.js">
+
+</script>
+<script type="text/javascript" th:inline="javascript">
+
+    var farmName = [[${farmName}]]; // 即可获取
+    /* “$()”可以叫做jQuery的构造函数。
+     $()就是jQuery()，在里面可以传参数，作用就是获取元素。
+
+     如下例子
+
+     $(".div1") 表示获取类名为div1的元素，例如获取<div class="div1"></div>
+
+     $(".div1").onclick表示类名为div1的div点击事件
+
+     $ 即 jQuery对象，是一个Function对象，$()是调用这个function，得到的是
+
+      登录表单验证
+              1登录按钮绑定事件(通过id选择器绑定)
+              2获取用户姓名密码
+              3判断姓名是否为空
+                如果为空。提示用户span 标签值 msg ，并且返回return
+              4判断密码是否为空
+                如果为空，提示用户...
+              5 如果登录信息不为空，则提交
+
+    但是这里好像只能用这个了按 $ 也只是出现这个，而且能主动获取 loginBtn
+
+    click
+     */
+
+    /*	1登录按钮绑定事件(通过id选择器绑定)*/
+    $("#loginBtn").click(function () {
+        var msg = $("#msg");
+        msg.show();
+        //获取用户和密码值
+        /* 光给标签name是获取不到的，要给id */
+        /*	2获取用户姓名密码*/
+        var login_user = $("#login_user").val();
+       /* alert(login_user);*/
+        var login_password = $("#login_password").val();
+
+
+        if (isEmpty(login_user)){
+            /* 如果为空为msg赋值 span 标签 msg */
+            $("#msg").html("用户名不可为空！");
+            return;
+
+        }
+
+        if (isEmpty(login_password)) {
+            /* 如果为空为msg赋值 span 标签 msg */
+            $("#msg").html("用户密码不可为空！");
+            return;
+
+        }
+        $("#loginForm").submit();
+    });
+
+    /* 判断字符串 是否为空 返回。 */
+
+    function isEmpty(str) {
+        if (str == null || str.trim() == "") {
+            return true;
+        }
+        return false;
+    }
+
+    $(document).ready(
+        function() {
+            var msg = $("#msg");
+            msg.hide();
+            if('${msg}'=='false'){
+                $("#msg").html();
+                msg.show();
+            }
+        });
+$.ajax()
+</script>
+</html>

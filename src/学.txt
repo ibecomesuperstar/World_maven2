@@ -1,0 +1,49 @@
+总结：sql映射文件（一） sql映射文件（二）
+MyBatis-SQL映射文件
+(1):mapper：namespace  。
+(2) :select :id
+             parameterType
+             resultType/resultMap  。
+
+(3):insert、update、delete:id  。
+                         parameterType  。
+
+(4):resultMap：id
+              type
+              result
+              association
+              collection  。
+不过我用的是hibernate 嵌入式的开发方便，同时 不用写xml文件也不要配置# 和以上的元素。
+hibernate移植性高，工作量小，对开发的要求也不大。
+
+
+list  转json   JSONObject所必须的6个包.zip
+https://blog.csdn.net/qq_39924152/article/details/80654180
+
+-Dfile.encoding=UTF-8
+
+
+无法访问资源404  后来发现localhost 都不能用了。
+所有环境变量都配置好了 tomcat 不能同时启动，同时启动后会闪退
+   服务》Apache Tomcat 7.0 Tomcat7 关闭 手动 启动tomcat 8 同时tomacat 8 对应jdk8
+
+
+   idea 启动不了tomcat？  https://blog.csdn.net/xzm616663858/article/details/88881444
+    .do: https://blog.csdn.net/weixin_41590998/article/details/100635925?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522161536240216780266274966%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=161536240216780266274966&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_v2~rank_v29-1-100635925.pc_search_result_no_baidu_js&utm_term=web.xml%E8%A6%81%E8%AE%BF%E9%97%AE+load.do
+
+     git idea 提交：   https://jingyan.baidu.com/article/9c69d48fe68cce13c9024e9c.html
+     git 仓库  ：https://github.com/ibecomesuperstar/World_maven.git
+
+     本次简单的推送 不做修改。  0
+
+crtl alt  L 代码格式调整
+crtl f5  /crtl shift 2 清除浏览器缓存
+
+
+ 版本退回
+https://blog.csdn.net/hyy11111/article/details/84969970?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control&dist_request_id=1328642.40291.16157163144351409&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control
+
+
+git 超时
+
+https://blog.csdn.net/qq_29493173/article/details/114534057?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-9&spm=1001.2101.3001.4242

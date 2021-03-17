@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 首先来解析 namespace ：命名空间 此输出通常用来映射到 Dao()层接口 这个接口尽量与I PersonMapper 保持一致  -->
+<mapper namespace="com.mapper.PersonMapper">
+<!-- id :对应 的dao 层 接口方法名  parameterType ： 指定 输入参数类型 -->
+    <select  id="selectPerseonByName"  parameterType="String"  resultType="com.entity.Person" >
+        select * from person where p_name=#{p_Name}
+
+    </select>
+</mapper>

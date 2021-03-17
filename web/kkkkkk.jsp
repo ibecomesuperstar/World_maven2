@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- <script type="text/javascript" src="../js/ajax.js"></script> --><!--可以不引用.ajax路径-->
+    <title>动态网页请求后台数据</title>
+</head>
+<body>
+<div id="1">
+    <!-- <img src="../img2/XXX.png"> 此处暂先注释掉静态的图片效果-->
+</div>
+</body>
+<script type="text/javascript">
+    $.ajax({               <!-- 用美元符号-->
+        url:'http://niumo.365hy.com/admin/api/index_rotation_map', <!-- 路径要补全-->
+        type:"POST",
+        data:{},
+        success:function(res){
+            console.log(res);
+            var html='';
+            for (var i = 0; i < res.data.length; i++) {
+                // res.data[i]
+
+                html+= '<img src="'+res.data[i].image_image+'">'/*<!--获取请求到的data里的image_image资源
+                                                    路径 -->*/
+
+                document.getElementById("1").innerHTML=html; // 获取或者替换掉html里面的内容
+            }
+        }
+    })
+</script>
+</html>

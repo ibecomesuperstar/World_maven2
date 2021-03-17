@@ -1,0 +1,66 @@
+eclipse。exe  地址 C:\Users\王彩思˼\eclipse-workspace        pet   old book YS
+
+D:\work  World 毕设
+
+ service 把数据赋值交给下一层
+
+
+ 
+理解 biz也叫service层 叫法不一样 都是处理业务。
+
+
+
+ 快捷：
+  Alt +Entry 快速导包。
+  手动导入包 包 右键  add as library..      确认。
+   IDEA 代码格式化,快捷键 一键格式化代碼:Ctrl+Alt+L。
+
+   navicat 复制字段  notepad 编辑 转换大小写 首字母大写，放entity里面。
+   插件 sqlliinform  -> format select sql  备注 // 会排列整齐
+   crtl + f/h INT 替换 int      Private->   private
+
+
+方法：
+格式化时间： getTimeStr2() 。
+思考：从数据库获取数据，简单的进行封装后怎么调用。
+
+
+
+idea 控制台乱码
+https://www.cnblogs.com/lwcode6/p/11598632.html
+
+
+错误
+
+
+ psssword 是数据库的关键字 导致不能插入数据改为user_password。
+ mysql 关键字URL：https://dev.mysql.com/doc/refman/5.7/en/keywords.html#keywords-in-current-series。
+
+
+ jar包的下载地址：https://mvnrepository.com/search?q=spring-web.jar+
+
+ MAVEN_HOME  D:\World\apache-maven-3.5.2
+
+
+
+zx yyyyyy
+ git here 强制推送 才会成功 git push -f origin master   ：https://blog.csdn.net/weixin_43290229/article/details/86410263
+ git 打开地址  提送不成功 只能 在 git bach  here     git push 进行推送。
+ D:\World\World_maven
+
+ push 要选择 备注的修改模块也能不用git 也能推送成功  就是要点选备注信息，多次提交就可以选择 部分去推送，而不是 点第一行去推送。
+
+ snmantic 官网 icon 就是图标 ，在用类方式引用 <i class="mini home icon" ></i> home可变  mini小号  还支持搜索
+https://semantic-ui.com/elements/icon.html
+<div class="ui grid">
+ <div class="ui moblie rere stackale guid" >       响应式：stackale  左右翻转 ：reversed
+
+ 导航收缩：<a href ="#" class="ui back icon button menutoggle">
+   通过jQuery  $("menutoggle").click(function){
+   $('a ').toggleClass('**')} 隐藏   class=" a *** item"
+使用媒体查询
+做一个展示与隐藏的
+@medi only screen 按 （max- wideth： 768px）{
+。-mobil -hide {
+display：none;}
+}
